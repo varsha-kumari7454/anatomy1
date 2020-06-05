@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Display|Muli|Flamenco&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<script>
+    function validateForm() {
+  var x = document.forms["myForm"]["username1"].value;
+        var y = document.forms["myForm"]["password1"].value;
+  if (x == "" || y=="") {
+    alert("Please Fill Credentials...");
+    return false;
+  }else if(x=="varsha" && y=="kumari"){
+      location.href="home.html";
+      return true;
+  }else{
+      alert("Invalid Credentials...");
+    return false;
+  }
+}
+    </script>
+    <style>
+        
+
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            
+        }
+        body{
+            font-size: 20px;
+            overflow-x: hidden;
+            color: white;
+            font-family: 'Flamenco',cursive;
+        }
+        header{
+            background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('login_backgrnd.jpg');
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            
+        }
+        .clearfix:after{
+            content: ".";
+            visibility: hidden;
+            display: block;
+            height: 0px;
+            clear: both;
+        }
+        .row{
+            max-width: 1186px;
+            margin: 0 auto;
+        }
+        .logo{
+            height: 100px;
+            width:auto;
+            float: left;
+            margin-top: 20px;
+        }
+        .main-nav{
+            float: right;
+            margin-top: 60px;
+        }
+        .main-nav li {
+            display: inline-block;
+            list-style-type: none;
+            margin-left: 30px;
+            text-transform:uppercase;
+            cursor: pointer;
+            padding: 5px 0px;
+            color:#fff;
+            text-decoration: none;
+            font-size: 90%;
+            font-weight: 100px;
+        }
+        .homepr{
+            color: :white;
+        }
+        .main-nav li:hover{
+            border-bottom: 3px solid #bf55ec;
+        }
+        main-nav li a:default
+        {
+            color:white;
+        }
+        .main-content-header{
+            width:1180px;
+            position: absolute;
+            top:55%;
+            left:50%;
+            transform: translate(-50%,-50%);
+           border: 1px solid red;
+        }
+.box{
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform:translate(-50%,-50%);
+            background:rgba(0,0,0,.8);
+            width:400px;
+            padding: 40px;
+            box-sizing:border-box;
+            border-radius:10px;
+            box-shadow:0 15px 15px rgba(0,0,0,.5);
+            
+            
+        }
+         h2{
+            text-align:center;
+            margin:0 0 30px;
+            padding:0px;
+            color:white;
+        }
+        .box .inputBox
+        {
+            position:relative;
+        }
+        .box .inputBox input{
+            width:100%;
+            padding:10px 0;
+            font-size:16px;
+            color:white;
+            margin-bottom:10px;
+            border:none;
+            outline:none;
+         background:transparent;
+            border-bottom:1px solid white;
+            
+        }
+
+        .box .inputBox label{
+            position:absolute;
+            top:0;
+            left:0;
+            padding:10px 0;
+            font-size:16px;
+            color:white;
+            pointer-events:none;
+            transition:.5s;
+            
+        }
+
+
+        .box input[type="submit"]{
+            margin-top:10px;
+            background:transparent;
+            border:none;
+            outline:none;
+            color:white;
+            background-color:deepskyblue;
+            padding:10px 20px;
+            border-radius:5px;
+            cursor:pointer;
+        }
+	.box .inputBox input:focus~label,.box .inputBox input:valid~label{
+            top:-20px;
+            left:0;
+            color:deepskyblue;
+            font-size: 12px;
+        }
+
+     .mobile-icon{
+            display: none;
+/*         color:black;*/
+        }
+    @media only screen and (max-width:1180px){
+            .main-content-header{
+                width:100%;
+                padding:0px 2px;
+            }
+        }
+        @media only screen and (max-width:998px){
+            h1{
+                font-size: 200%;
+            }
+        }
+        @media only screen and (max-width:768px){
+            h1{
+                font-size: 180%;
+            }
+            .main-nav{
+                display: none;
+            }
+        .mobile-icon{
+            display: inline-block;
+            color: white;
+            float: right;
+            font-size: 160%;
+            margin-top: 40px;
+            margin-right: 40px;
+        }
+            .main-nav{
+                float: left;
+		margin-top:15px;
+            }
+            .main-nav li{
+/*                float: left;*/
+                display: block;
+                margin-top:8px;
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <nav>
+            <div class="row clearfix">
+                <img src="logo.jpg" alt="" class="logo">
+                <ul class="main-nav animated slideInDown" id="check-class">
+                    <li onclick="index()">Home<li>
+                    <li onclick="logout()">Logout</li>
+                </ul>
+                <a href="#" class="mobile-icon" onclick="slideshow()"><i class="fa fa-bars" aria-hidden="true"></i></a>
+            </div>
+        </nav>
+</header>
+        <div class="box" id="mybox";>
+            <h2>Login</h2>
+        <form method="post" action="home.html" name="myForm" onsubmit="return validateForm()">
+            <div class="inputBox">
+                <input type="text" name="username1" required>
+                <label>username</label>
+
+                        </div>
+                        <div class="inputBox">
+                            <input type="password" name="password1" required>
+                            <label>password</label>
+                        </div>
+                        <input type="submit"
+                        value="submit" name="login">
+                    
+        </form>
+    </div>
+<script>
+        function slideshow(){
+            var x=document.getElementById("check-class");
+            if(x.style.display==="none"){
+                x.style.display="block";
+                
+            }else{
+                x.style.display="none";
+            }
+        }
+     function logout()
+        {
+            location.href="index.html";
+        }
+    function index()
+        {
+            location.href="index.html";
+        }
+    
+    </script>
+    
+</body>
+</html>
